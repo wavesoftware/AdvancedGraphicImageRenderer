@@ -25,12 +25,14 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.io.Serializable;
 import java.nio.ByteBuffer;
 import java.nio.channels.Channels;
 import java.nio.channels.ReadableByteChannel;
 import java.nio.channels.WritableByteChannel;
 import java.util.HashMap;
 import java.util.Map;
+import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
 import javax.servlet.http.HttpSessionBindingEvent;
 import javax.servlet.http.HttpSessionBindingListener;
@@ -40,7 +42,10 @@ import org.primefaces.model.StreamedContent;
 /**
  */
 @Named("GraphicImageManager")
-public class GraphicImageManager implements HttpSessionBindingListener {
+@SessionScoped
+public class GraphicImageManager implements HttpSessionBindingListener, Serializable {
+
+	private static final long serialVersionUID = 1;
 
 	private Map<String, String> storedContent = new HashMap<String, String>();
 
