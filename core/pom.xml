@@ -26,7 +26,7 @@
     <artifactId>advanced-graphic-image</artifactId>
     <name>Advanced Graphic image renderer</name>
     <packaging>jar</packaging>
-    <version>1.0.0</version>
+	<version>1.1.0-SNAPSHOT</version>
 
     <properties>
         <primefaces.version>3.4.1</primefaces.version>
@@ -35,15 +35,6 @@
 
 
     <build>
-        <finalName>
-            ${project.artifactId}
-        </finalName>
-        <resources>
-            <resource>
-                <directory>src/main/resources</directory>
-            </resource>
-
-        </resources>
         <plugins>
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -66,12 +57,6 @@
     </build>
 
     <repositories>
-
-        <repository>
-            <id>java.net</id>
-            <name>java.net</name>
-            <url>http://download.java.net/maven/2</url>
-        </repository>
         <repository>
             <id>prime-repo</id>
             <name>PrimeFaces Maven Repository</name>
@@ -101,9 +86,8 @@
             <groupId>javax.servlet</groupId>
             <artifactId>jstl</artifactId>
             <version>1.2</version>
-<scope>provided</scope>
-			</dependency>
-
+			<scope>provided</scope>
+		</dependency>
 
         <dependency>
             <groupId>org.primefaces</groupId>
@@ -117,8 +101,26 @@
             <version>2.5</version>
             <scope>provided</scope>
         </dependency>
-
-    </dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.10</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-core</artifactId>
+			<version>1.9.5</version>
+			<scope>test</scope>
+			<type>jar</type>
+		</dependency>
+		<dependency>
+			<groupId>javax</groupId>
+			<artifactId>javaee-web-api</artifactId>
+			<version>6.0</version>
+			<type>jar</type>
+		</dependency>
+	</dependencies>
 
 
 </project>
